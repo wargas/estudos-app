@@ -16,13 +16,13 @@ class AulaController {
 
     async store({request, params}) {
         const {disciplina_id} = params
-        const data = request.only(['ordem', 'nome', 'pagians', 'resumo'])
+        const data = request.only(['ordem', 'nome', 'paginas', 'resumo'])
 
         return await Aula.create({...data, disciplina_id})
     }
 
     async update({ request, params }) {
-        const data = request.only(['ordem', 'nome', 'pagians', 'resumo'])
+        const data = request.only(['ordem', 'nome', 'paginas', 'resumo'])
 
         const update = await Aula.query().where('id', params.id).update(data)
 
